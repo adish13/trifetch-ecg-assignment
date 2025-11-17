@@ -35,3 +35,6 @@ data/
 .DS_Store
 Thumbs.db
 
+# Documentation (video scripts, notes, etc.)
+docs/
+
