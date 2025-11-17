@@ -183,17 +183,4 @@ cd frontend
 npm test  # (tests to be added)
 ```
 
-## 📝 Notes
-
-- The classifier uses simple heuristics and may not match clinical accuracy
-- Event detection is approximate and should be validated by medical professionals
-- This is a demonstration project, not for clinical use
-
-## 👤 Author
-
-Built for TriFetch Take-Home Assignment
-
-## 📄 License
-
-This project is for evaluation purposes only.
 
