@@ -1,0 +1,14 @@
+{
+  "data_dir": "data",
+  "model_dir": "ml/models",
+  "results_dir": "ml/results",
+  "epochs": 100,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "use_focal_loss": true,
+  "use_augmentation": true,
+  "augment_factor": 3,
+  "test_size": 0.2,
+  "val_size": 0.15,
+  "random_state": 42
+}

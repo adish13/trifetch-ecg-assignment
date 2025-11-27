@@ -8,7 +8,16 @@ import numpy as np
 from pathlib import Path
 
 from data_loader import load_ecg_data, load_event_metadata
-from classifier import ECGClassifier
+
+# Try to use ML classifier, fallback to rule-based
+try:
+    from ml_classifier import MLECGClassifier
+    classifier = MLECGClassifier()
+    print("Using ML-based classifier (1D ResNet + Attention)")
+except Exception as e:
+    print(f"ML classifier not available ({e}), using rule-based classifier")
+    from classifier import ECGClassifier
+    classifier = ECGClassifier()
 
 app = FastAPI(title="ECG Arrhythmia Detection API")
 
@@ -20,9 +29,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Initialize classifier
-classifier = ECGClassifier()
 
 # Data directory
 DATA_DIR = Path(__file__).parent.parent / "data"
